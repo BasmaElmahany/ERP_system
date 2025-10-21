@@ -1,0 +1,544 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString() ?? "";
+    // عيّن العنوان الافتراضي إذا لم يُمرّر
+    var brandTitle =  ViewData["BrandTitle"] = "مركز شبكات المرافق"; ViewData["Title"] = "لوحة التحكم"; 
+
+    var pageTitle = ViewData["Title"]?.ToString() ?? brandTitle;
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@pageTitle - @brandTitle</title>
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* لوحة ألوان مطابقة لصفحة تسجيل الدخول */
+            --primary-color: #0ea5e9; /* Sky 500 */
+            --primary-dark: #0369a1; /* Sky 700 */
+            --secondary-color: #1d4ed8; /* Blue 700 */
+            --secondary-light: #60a5fa; /* Blue 400 */
+            --accent-color: #38bdf8; /* Sky 400 */
+            --danger-color: #ef4444; /* Red 500 */
+            --warning-color: #f59e0b; /* Amber 500 */
+
+            --dark-bg: #0b1220; /* أزرق داكن محايد */
+            --dark-secondary: #0f172a; /* Slate 900 */
+            --light-bg: #f1f5f9; /* Slate 100 */
+
+            --text-dark: #0f172a;
+            --sidebar-width: 280px;
+            --topbar-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo',sans-serif;
+            background: radial-gradient(1200px 600px at 80% -10%, rgba(56,189,248,0.18), transparent 40%), radial-gradient(1000px 500px at 0% 110%, rgba(96,165,250,0.18), transparent 40%), linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--text-dark);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+            box-shadow: -5px 0 30px rgba(2,132,199,0.25);
+            z-index: 1000;
+            transition: all .3s ease;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+            .sidebar::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .sidebar::-webkit-scrollbar-track {
+                background: rgba(255,255,255,0.05);
+            }
+
+            .sidebar::-webkit-scrollbar-thumb {
+                background: rgba(148,163,184,0.35);
+                border-radius: 3px;
+            }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }
+
+            .sidebar-header .logo {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto 1rem;
+                background: linear-gradient(145deg,#ffffff,#e2e8f0);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+                color: var(--primary-dark);
+                box-shadow: 0 10px 30px rgba(2,132,199,.35);
+                border: 1px solid rgba(2,132,199,.15);
+            }
+
+            .sidebar-header h4 {
+                color: #fff;
+                font-weight: 800;
+                font-size: 1.15rem;
+                margin: 0;
+                letter-spacing: .3px;
+            }
+
+        .sidebar-menu {
+            padding: .75rem 0 1rem;
+        }
+
+        .menu-section-title {
+            color: rgba(148,163,184,.9);
+            font-size: .75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 1rem 1.25rem .35rem;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: .85rem 1.25rem;
+            color: rgba(255,255,255,.9);
+            text-decoration: none;
+            transition: all .25s ease;
+            position: relative;
+            font-weight: 700;
+        }
+
+            .menu-item i {
+                font-size: 1.15rem;
+                width: 24px;
+                text-align: center;
+                margin-left: .25rem;
+            }
+
+            .menu-item::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 4px;
+                height: 100%;
+                background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+                transform: scaleY(0);
+                transition: transform .25s ease;
+            }
+
+            .menu-item:hover {
+                background: rgba(148,163,184,.08);
+                color: #fff;
+                padding-right: 1.6rem;
+            }
+
+                .menu-item:hover::before {
+                    transform: scaleY(1);
+                }
+
+            .menu-item.active {
+                background: rgba(56,189,248,.12);
+                color: #fff;
+                border-right: 4px solid var(--primary-color);
+            }
+
+            .menu-item .badge {
+                margin-right: auto;
+                border: none;
+                padding: .2rem .55rem;
+                font-size: .7rem;
+                font-weight: 800;
+                background: linear-gradient(135deg, var(--accent-color), var(--secondary-light));
+                color: #0b1220;
+            }
+
+        /* Dropdown (داخل الشريط الجانبي) */
+        .dropdown-menu {
+            background: #0b1325;
+            border: 1px solid rgba(148,163,184,.15);
+            padding: .5rem 0;
+            margin: 0;
+        }
+
+        .dropdown-item {
+            color: rgba(255,255,255,.85);
+            padding: .65rem 2.25rem;
+            transition: .2s;
+        }
+
+            .dropdown-item:hover {
+                background: rgba(148,163,184,.12);
+                color: #fff;
+            }
+
+            .dropdown-item.active {
+                background: rgba(56,189,248,.16);
+                color: #fff;
+            }
+
+            .dropdown-item i {
+                margin-left: .6rem;
+                width: 20px;
+                text-align: center;
+            }
+
+        /* Topbar */
+        .topbar {
+            position: fixed;
+            top: 0;
+            right: var(--sidebar-width);
+            left: 0;
+            height: var(--topbar-height);
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(2,132,199,.15);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            transition: all .3s ease;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.45rem;
+            color: var(--dark-secondary);
+            cursor: pointer;
+            padding: .5rem;
+            border-radius: .65rem;
+            transition: .2s;
+        }
+
+            .menu-toggle:hover {
+                background: var(--light-bg);
+                color: var(--primary-color);
+            }
+
+        .topbar-brand {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: .3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .topbar-right {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            padding: .45rem .95rem;
+            background: var(--light-bg);
+            border-radius: 999px;
+            text-decoration: none;
+            color: var(--dark-secondary);
+            transition: .2s;
+        }
+
+            .user-menu:hover {
+                background: var(--primary-color);
+                color: #fff;
+            }
+
+        .user-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        .user-name {
+            font-weight: 800;
+            font-size: .95rem;
+            color: var(--dark-secondary);
+        }
+
+        .user-menu:hover .user-name {
+            color: #fff;
+        }
+
+        /* Main */
+        .main-content {
+            margin-right: var(--sidebar-width);
+            margin-top: var(--topbar-height);
+            padding: 1.5rem;
+            min-height: calc(100vh - var(--topbar-height));
+            transition: all .3s ease;
+        }
+
+        /* Sidebar collapsed */
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+            .sidebar.collapsed .sidebar-header h4,
+            .sidebar.collapsed .menu-section-title,
+            .sidebar.collapsed .menu-item span,
+            .sidebar.collapsed .menu-item .badge {
+                display: none;
+            }
+
+            .sidebar.collapsed .menu-item {
+                justify-content: center;
+                padding: .85rem 0;
+            }
+
+                .sidebar.collapsed .menu-item i {
+                    margin-left: 0;
+                }
+
+            .sidebar.collapsed ~ .topbar {
+                right: 80px;
+            }
+
+            .sidebar.collapsed ~ .main-content {
+                margin-right: 80px;
+            }
+
+        /* Responsive */
+        @@media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(100%);
+            }
+
+                .sidebar.show {
+                    transform: translateX(0);
+                }
+
+            .topbar {
+                right: 0;
+            }
+
+            .main-content {
+                margin-right: 0;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .topbar {
+                padding: 0 1rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .topbar-brand {
+                font-size: 1rem;
+            }
+        }
+
+        /* Mobile Overlay */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.45);
+            z-index: 998;
+        }
+
+            .sidebar-overlay.show {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <!-- قابل للاستبدال بقسم SidebarHeader -->
+            @if (IsSectionDefined("SidebarHeader"))
+            {
+                @RenderSection("SidebarHeader", required: false)
+            }
+            else
+            {
+                <div class="logo" title="شعار المشروع">
+                    <i class="fa-solid fa-egg"></i>
+                </div>
+                <h4>@brandTitle</h4>
+            }
+        </div>
+
+        <nav class="sidebar-menu">
+            @if (IsSectionDefined("SidebarMenu"))
+            {
+                @RenderSection("SidebarMenu", required: false)
+            }
+            else
+            {
+                <!-- قائمة افتراضية (يمكن استبدالها بقسم SidebarMenu من أي View) -->
+                <div class="menu-section-title">القائمة الرئيسية</div>
+                <a href="@Url.Action("Index","Home")" class="menu-item @(currentController=="Home"?"active":"")">
+                    <i class="fa-solid fa-chart-line"></i><span>الرئيسية</span>
+                </a>
+                <a href="@Url.Action("Index","Chart")" class="menu-item @(currentController=="Chart"?"active":"")">
+                    <i class="fa-solid fa-chart-pie"></i><span>الرسوم والإحصائيات</span>
+                </a>
+
+                <div class="menu-section-title">المبيعات والتوريد</div>
+                <a href="@Url.Action("Index","TraderSales")" class="menu-item @(currentController=="TraderSales"?"active":"")">
+                    <i class="fa-solid fa-egg"></i><span>مبيعات للتجار</span>
+                </a>
+                <a href="@Url.Action("Index","WasteSales")" class="menu-item @(currentController=="WasteSales"?"active":"")">
+                    <i class="fa-solid fa-recycle"></i><span>مبيعات السبلة</span><span class="badge">جديد</span>
+                </a>
+                <a href="@Url.Action("Index","SalesReport")" class="menu-item @(currentController=="SalesReport"?"active":"")">
+                    <i class="fa-regular fa-file-lines"></i><span>التقرير الشامل</span><span class="badge">جديد</span>
+                </a>
+                <a href="@Url.Action("Index","Proceeds_Totals")" class="menu-item @(currentController=="Proceeds_Totals"?"active":"")">
+                    <i class="bi bi-receipt-cutoff"></i><span>التوريد</span><span class="badge">جديد</span>
+                </a>
+
+                <div class="menu-section-title">المشروعات والعنابر</div>
+                <a href="@Url.Action("Index","Branches")" class="menu-item @(currentController=="Branches"?"active":"")">
+                    <i class="fa-solid fa-city"></i><span>المشروعات</span>
+                </a>
+                <a href="@Url.Action("Index","Wards")" class="menu-item @(currentController=="Wards"?"active":"")">
+                    <i class="fa-solid fa-warehouse"></i><span>العنابر</span>
+                </a>
+            }
+        </nav>
+    </aside>
+
+    <!-- Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+            <div class="topbar-brand">@brandTitle</div>
+        </div>
+
+        <div class="topbar-right">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="dropdown">
+                    <a href="#" class="user-menu" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar">
+                            @(User.Identity?.Name?.Substring(0, 2).ToUpper() ?? "US")
+                        </div>
+                        <div class="user-name">@User.Identity?.Name</div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        @RenderSection("UserMenuExtra", required: false)
+                        <li>
+                            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index","LandingPage", new { area = "" })" class="d-inline">
+                                <button type="submit" class="dropdown-item">
+                                    <i class="bi bi-box-arrow-right"></i> تسجيل الخروج
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main-content">
+        @RenderBody()
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function () {
+            const $sidebar = document.getElementById('sidebar');
+            const $overlay = document.getElementById('sidebarOverlay');
+            const $toggle  = document.getElementById('menuToggle');
+
+            function isDesktop() { return window.innerWidth > 992; }
+
+            $toggle.addEventListener('click', function () {
+                if (isDesktop()) {
+                    $sidebar.classList.toggle('collapsed');
+                } else {
+                    $sidebar.classList.toggle('show');
+                    $overlay.classList.toggle('show');
+                }
+            });
+
+            $overlay.addEventListener('click', function () {
+                $sidebar.classList.remove('show');
+                $overlay.classList.remove('show');
+            });
+
+            // إغلاق القائمة عند اختيار عنصر (على الجوال)
+            document.querySelectorAll('.menu-item').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    if (!isDesktop()) {
+                        $sidebar.classList.remove('show');
+                        $overlay.classList.remove('show');
+                    }
+                });
+            });
+        })();
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
