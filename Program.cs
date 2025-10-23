@@ -1,4 +1,5 @@
 using ERP_system.Data;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,9 +43,22 @@ namespace ERP_system
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                 name: "default",
+                 pattern: "{controller=LandingPage}/{action=Index}/{id?}");
+
             app.MapRazorPages();
+
+            // Redirect Root URL to Login
+            app.MapGet("/", context =>
+            {
+                context.Response.Redirect("/LandingPage/Index");
+                return Task.CompletedTask;
+            });
+            app.MapGet("/Logout", async context =>
+            {
+                await context.SignOutAsync();
+                context.Response.Redirect("/LandingPage/Index");
+            });
 
             app.Run();
         }

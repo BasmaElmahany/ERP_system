@@ -4,6 +4,7 @@ using ERP_system.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ERP_system.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251022094352_edit_budget")]
+    partial class edit_budget
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +68,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("serveyingID");
 
-                    b.ToTable("Budget", (string)null);
+                    b.ToTable("Budget");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Center", b =>
@@ -80,7 +83,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasKey("centerId");
 
-                    b.ToTable("Center", (string)null);
+                    b.ToTable("Center");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Item", b =>
@@ -95,7 +98,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Payment_order", b =>
@@ -150,7 +153,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("serveyingID");
 
-                    b.ToTable("Payment_order", (string)null);
+                    b.ToTable("Payment_order");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Proceed", b =>
@@ -205,7 +208,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("villaged_id");
 
-                    b.ToTable("Proceeds", (string)null);
+                    b.ToTable("Proceeds");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Village", b =>
@@ -225,7 +228,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("CenterId");
 
-                    b.ToTable("Village", (string)null);
+                    b.ToTable("Village");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

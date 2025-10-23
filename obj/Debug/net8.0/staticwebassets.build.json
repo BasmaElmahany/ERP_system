@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zSuNhgp9CxXASyMSLyPvcqfQhC/LvT9Q9Yyes6OyNC4=",
+  "Hash": "hreFCm4GaxNQOw3ymbAwEwpCmS5eOWijoTtY8VZ81T8=",
   "Source": "ERP_system",
   "BasePath": "_content/ERP_system",
   "Mode": "Default",
@@ -4215,6 +4215,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg",
+      "SourceId": "ERP_system",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ERP_system\\ERP_system\\wwwroot\\",
+      "BasePath": "_content/ERP_system",
+      "RelativePath": "images/magic#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rwh5kc9f0h",
+      "Integrity": "6321983aEFg4cgkwPksQFUS9I4DYDCCbwdhCkzNY/EU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\magic.jpg"
     },
     {
       "Identity": "D:\\ERP_system\\ERP_system\\wwwroot\\js\\site.js",
@@ -19133,6 +19154,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "images/magic.jpg",
+      "AssetFile": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215177"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6321983aEFg4cgkwPksQFUS9I4DYDCCbwdhCkzNY/EU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 13:52:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6321983aEFg4cgkwPksQFUS9I4DYDCCbwdhCkzNY/EU="
+        }
+      ]
+    },
+    {
+      "Route": "images/magic.rwh5kc9f0h.jpg",
+      "AssetFile": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215177"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6321983aEFg4cgkwPksQFUS9I4DYDCCbwdhCkzNY/EU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 13:52:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rwh5kc9f0h"
+        },
+        {
+          "Name": "label",
+          "Value": "images/magic.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6321983aEFg4cgkwPksQFUS9I4DYDCCbwdhCkzNY/EU="
         }
       ]
     },

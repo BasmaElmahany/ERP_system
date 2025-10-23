@@ -136,6 +136,7 @@ wwwroot\bootstrap\scss\utilities\_api.scss
 wwwroot\bootstrap\scss\vendor\_rfs.scss
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\magic.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

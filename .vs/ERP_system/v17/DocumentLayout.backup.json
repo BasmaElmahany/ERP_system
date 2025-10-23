@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "D:\\ERP_system\\ERP_system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\wwwroot\\images\\magic.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:wwwroot\\images\\magic.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\areas\\identity\\pages\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:areas\\identity\\pages\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\areas\\identity\\pages\\account\\manage\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:areas\\identity\\pages\\account\\manage\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\views\\landingpage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:views\\landingpage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,14 +31,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "D:\\ERP_system\\ERP_system\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwDIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T13:19:56.152Z",
+              "Title": "magic.jpg - Bitmap [1280x1280, 24 bit, JPG]",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\images\\magic.jpg",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg - Bitmap [1280x1280, 24 bit, JPG]",
+              "RelativeToolTip": "wwwroot\\images\\magic.jpg - Bitmap [1280x1280, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-22T13:57:56.499Z",
+              "EditorCaption": " - Bitmap [1280x1280, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T13:55:05.897Z",
               "EditorCaption": ""
             },
             {
@@ -61,74 +61,22 @@
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\ERP_system\\ERP_system\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAKUBAAAAAAAAAAAAAL4BAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAKABAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T13:13:08.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccessDenied.cshtml",
-              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-              "ToolTip": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T13:13:00.929Z",
+              "WhenOpened": "2025-10-22T13:34:42.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
-              "ToolTip": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Views\\LandingPage\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\LandingPage\\Index.cshtml",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\Views\\LandingPage\\Index.cshtml",
+              "RelativeToolTip": "Views\\LandingPage\\Index.cshtml",
+              "ViewState": "AgIAAAACAAAAAAAAAAAAABUCAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T13:12:15.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T13:06:24.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "D:\\ERP_system\\ERP_system\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ViewState": "AgIAAGMCAAAAAAAAAAAqwIECAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T13:06:09.515Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ScaffoldingReadMe.txt",
-              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\ScaffoldingReadMe.txt",
-              "RelativeDocumentMoniker": "ScaffoldingReadMe.txt",
-              "ToolTip": "D:\\ERP_system\\ERP_system\\ScaffoldingReadMe.txt",
-              "RelativeToolTip": "ScaffoldingReadMe.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-10-21T13:06:02.234Z",
+              "WhenOpened": "2025-10-22T13:34:00.793Z",
               "EditorCaption": ""
             }
           ]

@@ -557,6 +557,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg",
+      "PackagePath": "staticwebassets\\images\\magic.jpg"
+    },
+    {
       "Id": "D:\\ERP_system\\ERP_system\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

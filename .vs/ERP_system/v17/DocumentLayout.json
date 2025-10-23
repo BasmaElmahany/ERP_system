@@ -1,12 +1,84 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ERP_system\\ERP_system\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\wwwroot\\images\\magic.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:wwwroot\\images\\magic.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|d:\\erp_system\\erp_system\\views\\landingpage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{778E82F1-21D6-41EE-8600-DEDE750CFF0F}|ERP_system.csproj|solutionrelative:views\\landingpage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "magic.jpg - Bitmap [1280x1280, 24 bit, JPG]",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\images\\magic.jpg",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\wwwroot\\images\\magic.jpg - Bitmap [1280x1280, 24 bit, JPG]",
+              "RelativeToolTip": "wwwroot\\images\\magic.jpg - Bitmap [1280x1280, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-22T13:57:56.499Z",
+              "EditorCaption": " - Bitmap [1280x1280, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T13:55:05.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAKABAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T13:34:42.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ERP_system\\ERP_system\\Views\\LandingPage\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\LandingPage\\Index.cshtml",
+              "ToolTip": "D:\\ERP_system\\ERP_system\\Views\\LandingPage\\Index.cshtml",
+              "RelativeToolTip": "Views\\LandingPage\\Index.cshtml",
+              "ViewState": "AgIAAAACAAAAAAAAAAAAABUCAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T13:34:00.793Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

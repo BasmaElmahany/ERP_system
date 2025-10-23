@@ -4,6 +4,7 @@ using ERP_system.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ERP_system.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251022094211_item")]
+    partial class item
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,28 +31,10 @@ namespace ERP_system.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<Guid>("centerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("facilitiesID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("facilities_amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("levelID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("level_amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("serveyingID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("serveying_amount")
+                    b.Property<decimal>("total")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("year")
@@ -59,13 +44,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("centerId");
 
-                    b.HasIndex("facilitiesID");
-
-                    b.HasIndex("levelID");
-
-                    b.HasIndex("serveyingID");
-
-                    b.ToTable("Budget", (string)null);
+                    b.ToTable("Budget");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Center", b =>
@@ -80,7 +59,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasKey("centerId");
 
-                    b.ToTable("Center", (string)null);
+                    b.ToTable("Center");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Item", b =>
@@ -95,7 +74,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Payment_order", b =>
@@ -150,7 +129,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("serveyingID");
 
-                    b.ToTable("Payment_order", (string)null);
+                    b.ToTable("Payment_order");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Proceed", b =>
@@ -205,7 +184,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("villaged_id");
 
-                    b.ToTable("Proceeds", (string)null);
+                    b.ToTable("Proceeds");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Village", b =>
@@ -225,7 +204,7 @@ namespace ERP_system.Data.Migrations
 
                     b.HasIndex("CenterId");
 
-                    b.ToTable("Village", (string)null);
+                    b.ToTable("Village");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -438,31 +417,7 @@ namespace ERP_system.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ERP_system.Data.Item", "facilities")
-                        .WithMany()
-                        .HasForeignKey("facilitiesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ERP_system.Data.Item", "level")
-                        .WithMany()
-                        .HasForeignKey("levelID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ERP_system.Data.Item", "serveying")
-                        .WithMany()
-                        .HasForeignKey("serveyingID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Center");
-
-                    b.Navigation("facilities");
-
-                    b.Navigation("level");
-
-                    b.Navigation("serveying");
                 });
 
             modelBuilder.Entity("ERP_system.Data.Payment_order", b =>
